@@ -17,13 +17,17 @@ export default function ProductCard({ key, product }) {
         width={200}
         height={200}
       />
-      <span className={styles.productName}>{product.attributes.name}</span>
-      <div className={styles.productCardBottom}>
-        <span className={styles.productPrice}>${product.attributes.price}</span>
-        <span className={styles.productRating}>
-          <RiStarSFill />
-          {parseFloat(product.attributes.rating).toFixed(1)}
-        </span>
+      <div className={styles.productCardBody}>
+        <span className={styles.productName}>{product.attributes.name}</span>
+        <div className={styles.productCardBottom}>
+          <span className={styles.productPrice}>
+            ${product.attributes.price}
+          </span>
+          <span className={styles.productRating}>
+            <RiStarSFill />
+            {parseFloat(product.attributes.rating).toFixed(1)}
+          </span>
+        </div>
       </div>
     </div>
   );

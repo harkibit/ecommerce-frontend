@@ -6,7 +6,7 @@ export default function Products({ products }) {
   return (
     <div className={styles.productsGrid}>
       {products &&
-        products.map((product) => {
+        products.data.map((product) => {
           return <ProductCard key={product.id} product={product} />;
         })}
     </div>
