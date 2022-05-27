@@ -3,14 +3,14 @@ import Image from "next/image";
 
 import styles from "../styles/Home.module.css";
 
-export default function ProductCard({ key, product }) {
-  const BASE_URL = "http://localhost:1337/api";
+import { fromImageToURL } from "../utils/urls";
 
+export default function ProductCard({ key, product }) {
   return (
     <div key={key} className={styles.productCard}>
       <Image
         alt={product.attributes.name}
-        src={BASE_URL + product.attributes.image.data.attributes.url}
+        src={fromImageToURL(product.attributes.image.data.attributes)}
         width={100}
         height={100}
       />

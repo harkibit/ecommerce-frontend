@@ -5,6 +5,7 @@ import logo from "../public/images/logo_transparent.png";
 export default function Sidebar() {
   return (
     <div className={styles.sidebar}>
+      hello
       <Image alt="logo" src={logo} width={150} height={150}></Image>
     </div>
   );

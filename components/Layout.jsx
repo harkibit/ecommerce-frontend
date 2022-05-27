@@ -1,11 +1,15 @@
 import Sidebar from "./Sidebar";
 import styles from "../styles/Home.module.css";
 
-export default function Layout({ children }) {
+import { Layout } from "antd";
+
+const { Header, Footer, Sider, Content } = Layout;
+
+export default function Wrapper({ children }) {
   return (
     <div className={styles.container}>
-      <Sidebar />
       <main className={styles.main}>{children}</main>
+      <Footer>Footer</Footer>
     </div>
   );
 }

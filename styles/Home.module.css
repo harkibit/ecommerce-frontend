@@ -1,142 +1,14 @@
-@value primary: 10316b;
-@value secondary: fdbe34;
-
-/* main container */
-
 .container {
-  margin: 0 auto;
 }
-@media screen and (max-width: 576px) {
-  .container {
-    width: 100%;
-  }
-}
-@media screen and (min-width: 576px) {
-  .container {
-    width: 540px;
-  }
-}
-@media screen and (min-width: 768px) {
-  .container {
-    width: 720px;
-  }
-}
-@media screen and (min-width: 992px) {
-  .container {
-    width: 960px;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .container {
-    width: 1140px;
-  }
-}
-@media screen and (min-width: 1400px) {
-  .container {
-    width: 1320px;
-  }
-}
-
-.main {
-  margin-left: 300px;
-  padding: 50px;
-  background-color: rgb(243, 243, 243);
-  min-height: 100%;
-  width: calc(100% - 300px);
-}
-
-/* sidebar */
-.sidebar {
-  width: 300px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: white;
-  padding: 50px;
-  height: 100%;
-  overflow-y: auto;
-}
-/* sidebar end */
-
-/* end main container */
+/* products */
 .productsGrid {
+  padding: 2rem;
+
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 100px;
 }
-
-.productCard > * {
-  display: block;
-}
-.productName {
-  color: gray;
-  font-size: 14px;
-  text-transform: capitalize;
-  font-weight: 600;
-}
-
-.productCardBottom {
+.productCard {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.productPrice {
-  font-size: 14px;
-  font-weight: 600;
-}
-
-/* // Small devices (landscape phones, 576px and up) */
-@media (max-width: 576px) {
-  .main {
-    margin-left: 0;
-    width: 100%;
-  }
-  .productsGrid {
-    grid-template-columns: 1fr;
-  }
-  .sidebar {
-    display: none;
-  }
-}
-
-/* // Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-  .main {
-    margin-left: 0;
-    width: 100%;
-  }
-  .productsGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .sidebar {
-    display: none;
-  }
-}
-
-/* // Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-  .main {
-    margin-left: 300px;
-    width: calc(100% - 300px);
-  }
-  .productsGrid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .sidebar {
-    width: 300px;
-  }
-}
-
-/* // Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-  .main {
-    margin-left: 300px;
-    width: calc(100% - 300px);
-  }
-  .sidebar {
-    width: 300px;
-  }
-  .productsGrid {
-    grid-template-columns: repeat(4, 1fr);
-  }
+  flex-direction: column;
+  align-items: flex-start;
 }
