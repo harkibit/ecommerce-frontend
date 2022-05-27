@@ -3,12 +3,48 @@
 /* products */
 .productsGrid {
   padding: 2rem;
-
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  gap: 40px;
 }
 .productCard {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  /* background-color: rgb(221, 221, 221); */
+}
+.productCard > span:nth-child(1) {
+  width: 100% !important;
+}
+.productName {
+  font-weight: 600;
+  color: gray;
+}
+
+.productImage {
+  width: 100% !important;
+  object-fit: cover;
+}
+.productCardBottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.productPrice {
+  font-weight: 600;
+}
+.productRating {
+  display: flex;
+  align-items: center;
+}
+.productRating > svg:nth-child(1) {
+  color: #fdcc0d;
+}
+@media screen and (max-width: 768px) {
+  .productsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

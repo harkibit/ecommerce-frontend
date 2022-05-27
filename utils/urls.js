@@ -1,4 +1,4 @@
-const BASE_URL = process.env.BASE_URL || "http://localhost:1337/api";
+const BASE_URL = process.env.BASE_URL || "http://localhost:1337";
 
 export const fromImageToURL = (image) => {
   if (!image) {
