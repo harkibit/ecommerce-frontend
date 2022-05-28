@@ -1,13 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "../styles/Home.module.css";
 import ProductCard from "./ProductCard";
+import Link from "next/link";
 
-export default function Products({ products }) {
+export default function Products({ products, maxArray }) {
   return (
     <div className={styles.productsGrid}>
       {products &&
-        products.data.map((product) => {
-          return <ProductCard key={product.id} product={product} />;
+        products.data.slice(0, maxArray).map((product) => {
+          return (
+            <Link
+              href={`/products/${encodeURIComponent(product.slug)}`}
+              key={product.id}
+            >
+              <ProductCard product={product} />
+            </Link>
+          );
         })}
     </div>
   );

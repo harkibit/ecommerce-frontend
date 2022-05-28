@@ -18,7 +18,7 @@ export default function Home({ products }) {
       </Head>
       <HeaderCarousel />
       <Layout>
-        <Products products={products} />
+        <Products products={products} maxArray={8} />
       </Layout>
     </div>
   );
