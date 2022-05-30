@@ -1,5 +1,58 @@
+@value primary: rgb(21, 58, 91);
+
+.btn {
+  padding: 0.66667rem 4rem;
+  border: none;
+  transition: 0.3s ease;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 0.75px;
+}
+.btnPrimary {
+  background-color: primary;
+  color: white;
+}
+.btnPrimary:hover {
+  background-color: white;
+  color: primary;
+}
 .container {
 }
+
+/* navbar */
+.menuBar {
+  display: flex;
+  padding: 10px 20px;
+  justify-content: space-between;
+}
+.menuBar .menuCon {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  background-color: #fff;
+}
+.logo {
+  max-height: 100% !important;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: primary;
+  font-size: 24px;
+}
+.rightMenu {
+  display: flex;
+  align-items: center;
+}
+.barsMenu {
+  display: none;
+}
+
+/* navbar end */
+
 /* products */
 .productsGrid {
   padding: 2rem;
@@ -53,7 +106,33 @@
 .productRating > svg:nth-child(1) {
   color: #fdcc0d;
 }
+/* products end */
 
+/* testimonials start */
+.testimonialsGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  padding: 40px;
+}
+.testimonialsCard {
+  text-align: center;
+  font-size: 16px;
+  color: primary;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.testimonialsLogo {
+  max-height: 100px;
+}
+/* testimonials end */
+
+@media screen and (max-width: 1024px) {
+  .barsMenu {
+    display: block;
+  }
+}
 @media (min-width: 320px) and (max-width: 480px) {
   .productsGrid {
     grid-template-columns: 1fr;

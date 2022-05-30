@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import logo from "../public/images/logo_transparent.png";
+import logo from "../public/logo_transparent.png";
 
 export default function Sidebar() {
   return (
