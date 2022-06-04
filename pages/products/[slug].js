@@ -1,10 +1,31 @@
-import React, { useState, useEffect } from "react";
+import Head from "next/head";
+
 import { useRouter } from "next/router";
 
 import { API_URL } from "../../utils/urls";
 
 export default function Product({ product }) {
-  return <div>{product.attributes?.name}</div>;
+  return (
+    <>
+      <Head>
+        <title>
+          {product.attributes?.meta_title
+            ? product.attributes?.meta_title
+            : "Single Product Page"}
+        </title>
+        <meta
+          name="description"
+          content={
+            product.attributes?.meta_description
+              ? product.attributes?.meta_description
+              : "Single Product Page"
+          }
+        />
+        <link rel="icon" href="/public/favicon.png" />
+      </Head>
+      <div>{product.attributes?.name}</div>
+    </>
+  );
 }
 
 export async function getStaticProps({ params: { slug } }) {
