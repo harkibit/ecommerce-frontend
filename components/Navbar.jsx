@@ -21,14 +21,8 @@ export default function Navbar() {
   };
   return (
     <nav className={styles.menuBar}>
-      <div className={styles.logo}>
-        Logo
-        {/* <Image src={logo} alt="logo" width={150} height={150} /> */}
-      </div>
+      <div className={styles.logo}>Logo</div>
       <div className={styles.menuCon}>
-        {/* <div className="leftMenu">
-          <LeftMenu />
-        </div> */}
         <div className={styles.rightMenu}>
           <RightMenu />
 

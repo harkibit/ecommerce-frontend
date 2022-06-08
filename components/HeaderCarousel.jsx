@@ -1,28 +1,33 @@
 import React from "react";
+import Image from "next/Image";
 import { Carousel } from "antd";
 import styles from "../styles/Home.module.css";
 
 const backgroundStyle = {
-  backgroundImage:
-    'linear-gradient(100deg, rgba(0,0,0,0.2), rgba(0,0,0,0.3)), url("/header.jpg")',
-  height: "700px",
+  // height: "700px",
   backgroundPosition: "center",
   backgroundSize: "cover",
   backgroundRepeat: "no-repeat",
-  padding: "100px",
+  padding: "50px",
   display: "flex",
   alignItems: "center",
 };
+const imageStyle = {
+  width: "50%",
+};
+const image = {
+  width: "100%",
+  objectFit: "cover",
+  borderRadius: "10px",
+};
 const contentStyle = {
   width: "50%",
-  color: "white",
+  paddingRight: "50px",
 };
 const title = {
-  color: "white",
   fontSize: "72px",
 };
 const subtitle = {
-  color: "white",
   fontSize: "24px",
 };
 
@@ -30,7 +35,7 @@ export default function HeaderCarousel() {
   return (
     <div style={backgroundStyle}>
       <div style={contentStyle}>
-        <h1 style={title}>Sip pure-tasting water as nature intended</h1>
+        <h1 style={title}>Sip pure-tasting</h1>
         <p style={subtitle}>
           Go beyond filtration with a unique multi-stage filtration and
           purification system for crisp drinking water.
@@ -38,6 +43,15 @@ export default function HeaderCarousel() {
         <button className={`${styles.btn} ${styles.btnPrimary}`}>
           Learn More
         </button>
+      </div>
+      <div style={imageStyle}>
+        <Image
+          src="/download.jpg"
+          width={900}
+          height={600}
+          style={image}
+          alt="best selling book"
+        ></Image>
       </div>
     </div>
   );

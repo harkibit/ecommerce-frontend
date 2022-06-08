@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 import styles from "../styles/Home.module.css";
 
@@ -11,7 +12,7 @@ import { RiStarSFill } from "react-icons/ri";
 
 export default function ProductCard({ key, product }) {
   return (
-    <Link href={`/products/${product.attributes.slug}`}>
+    <Link href={`/products/${product.id}`}>
       <a>
         <div key={key} className={styles.productCard}>
           <Image

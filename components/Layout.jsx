@@ -10,7 +10,7 @@ const { Header, Sider, Content } = Layout;
 export default function Wrapper({ children }) {
   return (
     <div className={styles.container}>
-      <main className={styles.main}>{children}</main>
+      <Content className={styles.main}>{children}</Content>
       <Footer />
     </div>
   );

@@ -9,10 +9,7 @@ export default function Products({ products, maxArray }) {
       {products &&
         products.data.slice(0, maxArray).map((product) => {
           return (
-            <Link
-              href={`/products/${encodeURIComponent(product.slug)}`}
-              key={product.id}
-            >
+            <Link href={`/products/${product.id}`} key={product.id}>
               <ProductCard product={product} />
             </Link>
           );

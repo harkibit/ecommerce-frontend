@@ -19,7 +19,7 @@ export default function Home({ products }) {
       </Head>
       <Navbar />
       <HeaderCarousel />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <Divider />
       <Layout>
         <Products products={products} maxArray={8} />
