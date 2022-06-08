@@ -15,7 +15,7 @@ export default function ProductCard({ key, product }) {
       <a>
         <div key={key} className={styles.productCard}>
           <Image
-            alt={product.attributes.name}
+            alt={product.attributes.title}
             src={fromImageToURL(product?.attributes.image.data?.attributes)}
             className={styles.productImage}
             width={200}
@@ -23,7 +23,7 @@ export default function ProductCard({ key, product }) {
           />
           <div className={styles.productCardBody}>
             <span className={styles.productName}>
-              {product.attributes.name}
+              {product.attributes.title}
             </span>
             <div className={styles.productCardBottom}>
               <span className={styles.productPrice}>

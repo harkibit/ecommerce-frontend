@@ -3,12 +3,13 @@ import { Carousel } from "antd";
 import styles from "../styles/Home.module.css";
 
 const backgroundStyle = {
-  backgroundImage: 'url("/homepage.jpg")',
+  backgroundImage:
+    'linear-gradient(100deg, rgba(0,0,0,0.2), rgba(0,0,0,0.3)), url("/header.jpg")',
   height: "700px",
   backgroundPosition: "center",
   backgroundSize: "cover",
   backgroundRepeat: "no-repeat",
-  padding: "10%",
+  padding: "100px",
   display: "flex",
   alignItems: "center",
 };

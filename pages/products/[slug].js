@@ -21,7 +21,7 @@ export default function Product({ product }) {
               : "Single Product Page"
           }
         />
-        <link rel="icon" href="/public/favicon.png" />
+        <link rel="icon" href="favicon.png" />
       </Head>
       <div>{product.attributes?.name}</div>
     </>
@@ -29,22 +29,23 @@ export default function Product({ product }) {
 }
 
 export async function getStaticProps({ params: { slug } }) {
-  const query = `?populate=*&where={"slug":"${slug}"}`;
-
-  const product_res = await fetch(API_URL + "products/" + query);
+  const query = `?populate=*&slug=${slug}`;
+  const product_res = await fetch(API_URL + `products` + query);
   const product = await product_res.json();
-  return { props: { product: product } };
+  return {
+    props: {
+      product: product,
+    },
+  };
 }
 
-export async function getStaticPaths(id) {
-  const products_res = await fetch(API_URL + "products");
+export async function getStaticPaths() {
+  const query = "?populate=*";
+  const products_res = await fetch(API_URL + "products/" + query);
   const products = await products_res.json();
-
   return {
-    paths: products.data.map((product) => ({
-      params: {
-        slug: product.attributes.slug,
-      },
+    paths: products.data.map((el) => ({
+      params: { slug: String(el.attributes.slug) },
     })),
     fallback: false,
   };
