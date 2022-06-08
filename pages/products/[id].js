@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 
 import { BsCartPlus } from "react-icons/bs";
 import { HiMinus, HiPlus } from "react-icons/hi";
+import { Space, Spin } from "antd";
 
 import Navbar from "../../components/Navbar";
 import Layout from "../../components/Layout";
@@ -16,6 +17,7 @@ import { formatDecimals } from "../../utils/format";
 export default function Product() {
   const [counter, setCounter] = useState(1);
   const [product, setProduct] = useState({});
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
   const { id } = router.query;
 
@@ -25,11 +27,15 @@ export default function Product() {
   const increaseCounter = () => setCounter(counter + 1);
 
   React.useEffect(() => {
+    const query = "?populate=*";
+
+    setLoading(true);
     id &&
-      fetch(API_URL + "products/" + id + "?populate=*")
+      fetch(API_URL + "products/" + id + query)
         .then((res) => res.json())
         .then((data) => {
           setProduct(data.data);
+          setLoading(false);
         });
   }, [id]);
 
@@ -49,46 +55,57 @@ export default function Product() {
               : "Single Product Page"
           }
         />
-        <link rel="icon" href="favicon.png" />
+        <link rel="icon" href="favicon.svg" />
       </Head>
       <Navbar />
       <Layout>
-        <div className={styles.productContainer}>
-          <div>
-            <Image
-              src={fromImageToURL(product?.attributes?.image.data?.attributes)}
-              alt={product?.attributes?.title}
-              width={600}
-              height={600}
-              className={styles.productImage}
-              style={{ borderRadius: "10px" }}
-            />
-          </div>
-          <div className={styles.productContent}>
-            <span className={styles.productGenre}>
-              {product?.attributes?.genre}
-            </span>
-            <h1>{product?.attributes?.title}</h1>
-            <p>{product?.attributes?.description}</p>
-            <span className={styles.productPrice}>
-              ${formatDecimals(product?.attributes?.price, 2)}
-            </span>
-            <div className={styles.productFooter}>
-              <div className={styles.productCounterContainer}>
-                <button className={styles.iconBtn} onClick={decreaseCounter}>
-                  <HiMinus />
-                </button>
-                <span className={styles.counter}>{counter}</span>
-                <button className={styles.iconBtn} onClick={increaseCounter}>
-                  <HiPlus />
+        {loading ? (
+          <Spin size="large" />
+        ) : (
+          <div className={styles.singleProductContainer}>
+            <div>
+              <Image
+                src={fromImageToURL(
+                  product?.attributes?.image.data?.attributes
+                )}
+                alt={product?.attributes?.title}
+                width={600}
+                height={700}
+                className={styles.singleProductImage}
+                style={{ borderRadius: "10px" }}
+              />
+            </div>
+            <div className={styles.productContent}>
+              <span className={styles.productGenre}>
+                {product?.attributes?.genre}
+              </span>
+              <h1>{product?.attributes?.title}</h1>
+              <p>{product?.attributes?.description}</p>
+
+              <div>
+                <h3>{product?.attributes?.author?.fullName}</h3>
+              </div>
+
+              <span className={styles.productPrice}>
+                ${formatDecimals(product?.attributes?.price, 2)}
+              </span>
+              <div className={styles.productFooter}>
+                <div className={styles.productCounterContainer}>
+                  <button className={styles.iconBtn} onClick={decreaseCounter}>
+                    <HiMinus />
+                  </button>
+                  <span className={styles.counter}>{counter}</span>
+                  <button className={styles.iconBtn} onClick={increaseCounter}>
+                    <HiPlus />
+                  </button>
+                </div>
+                <button className={`${styles.btn} ${styles.btnPrimary}`}>
+                  <BsCartPlus /> &nbsp; Add to Cart
                 </button>
               </div>
-              <button className={`${styles.btn} ${styles.btnPrimary}`}>
-                <BsCartPlus /> &nbsp; Add to Cart
-              </button>
             </div>
           </div>
-        </div>
+        )}
       </Layout>
     </>
   );

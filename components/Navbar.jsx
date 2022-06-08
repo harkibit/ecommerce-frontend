@@ -21,7 +21,9 @@ export default function Navbar() {
   };
   return (
     <nav className={styles.menuBar}>
-      <div className={styles.logo}>Logo</div>
+      <div className={styles.logo}>
+        <Image src="/logo.svg" width={60} height={60} />
+      </div>
       <div className={styles.menuCon}>
         <div className={styles.rightMenu}>
           <RightMenu />
