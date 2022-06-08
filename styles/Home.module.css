@@ -1,6 +1,15 @@
 @value primary: rgb(21, 58, 91);
+@value lightGray: #eee;
+
+@value borderRadius: 10px;
 
 /* button style start */
+.iconBtn {
+  border: none;
+  background-color: transparent;
+  padding: 10px;
+  cursor: pointer;
+}
 .btn {
   padding: 0.66667rem 4rem;
   border: 2px solid transparent;
@@ -9,6 +18,10 @@
   font-size: 1rem;
   font-weight: bold;
   letter-spacing: 0.75px;
+  border-radius: borderRadius;
+  display: flex;
+  align-items: center;
+  width: max-content;
 }
 .btnSmall {
   padding: 0.3rem 4rem;
@@ -17,10 +30,7 @@
   background-color: primary;
   color: white;
 }
-.btnPrimary:hover {
-  background-color: white;
-  color: primary;
-}
+
 .btnWhite {
   background-color: white;
   color: primary;
@@ -149,6 +159,65 @@
   color: #fdcc0d;
 }
 /* products end */
+
+/* single product page */
+.productContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: 60px auto;
+}
+.productContainer div {
+  width: 45%;
+}
+.productImage {
+  width: 100% !important;
+  object-fit: cover;
+  border-radius: borderRadius;
+  height: initial !important;
+}
+.productContent .productGenre {
+  color: yellow;
+}
+.productContent h1 {
+  font-size: 72px;
+  font-weight: bold;
+}
+.productContent p {
+  font-size: 18px;
+  color: gray;
+  margin-bottom: 1rem;
+}
+.productContent .productPrice {
+  font-size: 36px;
+  font-weight: bold;
+}
+.productContent .productFooter {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-top: 50px;
+}
+.productContent .productCounterContainer {
+  display: flex;
+  align-items: center;
+  background-color: lightGray;
+  width: max-content;
+  margin-right: 50px;
+  border-radius: borderRadius;
+  padding: 0px 5px;
+}
+.productContent .productCounterContainer > .counter {
+  padding: 10px 30px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.productContent .productCounterContainer > .iconBtn {
+  color: primary;
+  font-size: 20px;
+}
+/* single product page end */
 
 /* testimonials start */
 .testimonialsGrid {
