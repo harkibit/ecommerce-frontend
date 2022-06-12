@@ -106,6 +106,50 @@
 
 /* navbar end */
 
+/* signin start */
+.signinContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 80%;
+  height: 80vh;
+  margin: auto;
+  border-radius: borderRadius;
+  overflow: hidden;
+}
+.signinContainer > .col1 {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 100px;
+}
+.signinTitle {
+  font-size: 56px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: primary;
+  margin-bottom: 10px;
+}
+.signinParagraph {
+  font-size: 14px;
+  color: rgb(101, 101, 101);
+  margin-bottom: 20px;
+}
+.signinInput {
+  width: 100% !important;
+}
+.inputContainer {
+  /* margin-bottom: 40px; */
+}
+.signinContainer > .col2 {
+  background-color: secondary;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+/* signin end */
+
 /* products */
 .productsGrid {
   padding: 2rem;

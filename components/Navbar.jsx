@@ -7,8 +7,6 @@ import { Drawer, Button } from "antd";
 import LeftMenu from "./LeftMenu";
 import RightMenu from "./RightMenu";
 
-import logo from "/public/logo_transparent.png";
-
 export default function Navbar() {
   const [visible, setVisible] = useState(false);
 
@@ -22,7 +20,7 @@ export default function Navbar() {
   return (
     <nav className={styles.menuBar}>
       <div className={styles.logo}>
-        <Image src="/logo.svg" width={60} height={60} />
+        <Image src="/logo.svg" width={60} height={60} alt="logo" />
       </div>
       <div className={styles.menuCon}>
         <div className={styles.rightMenu}>

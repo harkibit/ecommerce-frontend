@@ -1,5 +1,7 @@
 import React from "react";
 
+import Link from "next/Link";
+
 import { FiShoppingCart } from "react-icons/fi";
 import styles from "../styles/Home.module.css";
 import { DownOutlined, SmileOutlined } from "@ant-design/icons";
@@ -62,7 +64,7 @@ export default function RightMenu() {
         </Dropdown>
       </li>
       <li>
-        <a href="#">Sign In</a>
+        <Link href="/signIn">Sign In</Link>
       </li>
       <li>
         <a href="#">
