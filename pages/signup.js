@@ -14,8 +14,8 @@ function signIn() {
   return (
     <>
       <Head>
-        <title>Sign In</title>
-        <meta name="description" content="Sign In" />
+        <title>Sign Up</title>
+        <meta name="description" content="Sign Up" />
         <link rel="icon" href="favicon.svg" />
       </Head>
 
@@ -23,13 +23,36 @@ function signIn() {
         <div className={styles.col1}>
           <div>
             <span>
-              Need an account? <Link href="signup">Sign Up</Link>
+              Have an account? <Link href="signIn">Sign In</Link>
             </span>
-            <h1 className={styles.signinTitle}>Welcome Back!</h1>
+            <h1 className={styles.signinTitle}>Welcome to Books!</h1>
             <p className={styles.signinParagraph}>
               lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut.
             </p>
+            <Space
+              direction="horizontal"
+              style={{
+                width: "100%",
+                marginBottom: "20px",
+              }}
+            >
+              <div className={styles.inputContainer}>
+                <label>First Name</label>
+                <Input
+                  placeholder="Your first name"
+                  className={`${styles.signinInput}`}
+                />
+              </div>
+
+              <div className={styles.inputContainer}>
+                <label>Last Name</label>
+                <Input
+                  placeholder="Your last name"
+                  className={`${styles.signinInput}`}
+                />
+              </div>
+            </Space>
             <Space
               direction="vertical"
               style={{ width: "100%", marginBottom: "20px" }}
@@ -42,7 +65,7 @@ function signIn() {
                 <Input
                   placeholder="Enter your email"
                   suffix={<MdAlternateEmail />}
-                  className={styles.signinInput}
+                  className={`w-100 ${styles.signinInput}`}
                 />
               </div>
 
@@ -53,14 +76,13 @@ function signIn() {
                   iconRender={(visible) =>
                     visible ? <AiOutlineEye /> : <AiOutlineEyeInvisible />
                   }
-                  className={styles.signinInput}
+                  className={`w-100 ${styles.signinInput}`}
                 />
               </div>
             </Space>
             <Button
               variant="primary"
-              value="Sign In"
-              // size="small"
+              value="Create an account"
               width="full"
               style={{ marginTop: "20px" }}
               onClick={handleSignIn}

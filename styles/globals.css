@@ -6,6 +6,13 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+:root {
+  --primary: #003366;
+  --secondary: #6495ed;
+  --lightGray: #eee;
+  --borderRadius: 10px;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -24,4 +31,55 @@ dl {
 
 img {
   max-width: 100%;
+}
+
+/* button style start */
+.iconBtn {
+  border: none;
+  background-color: transparent;
+  padding: 10px;
+  cursor: pointer;
+}
+.btn {
+  padding: 0.66667rem 4rem;
+  border: 2px solid transparent;
+  transition: 0.3s ease;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 0.75px;
+  border-radius: var(--borderRadius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+}
+.btnSmall {
+  padding: 0.3rem 4rem;
+}
+.btnLarge {
+  padding: 0.66667rem 10rem;
+}
+
+.btnFullWidth {
+  width: 100%;
+}
+.btnPrimary {
+  background-color: var(--primary);
+  color: white;
+}
+
+.btnWhite {
+  background-color: white;
+  color: var(--primary);
+}
+.btnWhite:hover {
+  background-color: var(--primary);
+  border: 2px solid white;
+  color: white;
+}
+/* button style end */
+
+.w-100 {
+  width: 100%;
 }
