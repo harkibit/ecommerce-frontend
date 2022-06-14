@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 import styles from "../styles/Home.module.css";
 
@@ -9,8 +10,30 @@ import { MdAlternateEmail } from "react-icons/md";
 import { Input, Space } from "antd";
 import Button from "../common/Button";
 
-function signIn() {
-  const handleSignIn = () => {};
+import axios from "axios";
+
+function SignIn() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState();
+
+  const [errorMessage, setErrorMessge] = useState(null);
+  const router = useRouter();
+
+  const handleSignIn = () => {
+    const body = {
+      identifier: email,
+      password: password,
+    };
+    axios
+      .post(process.env.BASE_URL + "/auth/local", body)
+      .then((res) => {
+        setErrorMessge("");
+        console.log(res);
+        localStorage.setItem("jwt", res.data.jwt);
+        router.push("/");
+      })
+      .catch((e) => setErrorMessge("*" + e.response.data.error.message + "*"));
+  };
   return (
     <>
       <Head>
@@ -22,7 +45,7 @@ function signIn() {
       <section className={styles.signinContainer}>
         <div className={styles.col1}>
           <div>
-            <span>
+            <span className="greyText">
               Need an account? <Link href="signup">Sign Up</Link>
             </span>
             <h1 className={styles.signinTitle}>Welcome Back!</h1>
@@ -38,11 +61,12 @@ function signIn() {
                 className={styles.inputContainer}
                 style={{ marginBottom: "20px" }}
               >
-                <label>Email</label>
+                <label>Email or username</label>
                 <Input
-                  placeholder="Enter your email"
+                  placeholder="Enter your email or username"
                   suffix={<MdAlternateEmail />}
                   className={styles.signinInput}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
 
@@ -54,6 +78,7 @@ function signIn() {
                     visible ? <AiOutlineEye /> : <AiOutlineEyeInvisible />
                   }
                   className={styles.signinInput}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
             </Space>
@@ -73,4 +98,4 @@ function signIn() {
   );
 }
 
-export default signIn;
+export default SignIn;

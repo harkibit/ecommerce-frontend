@@ -45,6 +45,7 @@
   letter-spacing: 5px;
   color: primary;
   font-size: 24px;
+  cursor: pointer;
 }
 .rightMenu {
   display: flex;
@@ -71,11 +72,13 @@
 .signinContainer {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  width: 60%;
-  height: 80vh;
+  width: 70%;
+  min-height: 70vh;
+  height: max-content;
   margin: auto;
   border-radius: borderRadius;
   overflow: hidden;
+  padding: 50px 0;
 }
 .signinContainer > .col1 {
   height: 100%;
@@ -93,8 +96,9 @@
 }
 .signinParagraph {
   font-size: 14px;
-  color: rgb(101, 101, 101);
-  margin-bottom: 30px;
+  color: var(--gray);
+  margin-bottom: 25px;
+  text-transform: capitalize;
 }
 .signinInput {
   margin-top: 5px;
@@ -122,6 +126,27 @@
 
 .signinBtn {
   width: 100%;
+}
+
+.errorMessage {
+  color: var(--red);
+  transform: capitalize;
+}
+
+.signupIconBtn {
+  border: 1px solid var(--lightGray);
+  background-color: transparent;
+  border-radius: var(--borderRadius);
+  font-size: 36px;
+  color: var(--primary);
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.signupIconBtn:not(:last-child) {
+  margin-right: 20px;
 }
 /* signin end */
 
@@ -329,6 +354,22 @@
 /* footer end */
 
 @media screen and (max-width: 1024px) {
+  .signinContainer {
+    grid-template-columns: 1fr;
+    height: max-content;
+    width: 90%;
+    padding: 10px 0;
+  }
+  .signinContainer > .col2 {
+    grid-row: 1;
+    height: 150px;
+    border-radius: var(--borderRadius) var(--borderRadius) 0 0;
+    margin-bottom: 10px;
+  }
+  .signinContainer > .col1 {
+    grid-row: 2;
+    padding-right: 0;
+  }
   .barsMenu {
     display: block;
   }

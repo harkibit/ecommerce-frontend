@@ -91,15 +91,15 @@ export default function Product() {
               </span>
               <div className={styles.productFooter}>
                 <div className={styles.productCounterContainer}>
-                  <button className={styles.iconBtn} onClick={decreaseCounter}>
+                  <button className="iconBtn" onClick={decreaseCounter}>
                     <HiMinus />
                   </button>
                   <span className={styles.counter}>{counter}</span>
-                  <button className={styles.iconBtn} onClick={increaseCounter}>
+                  <button className="iconBtn" onClick={increaseCounter}>
                     <HiPlus />
                   </button>
                 </div>
-                <button className={`${styles.btn} ${styles.btnPrimary}`}>
+                <button className="btn btnPrimary">
                   <BsCartPlus /> &nbsp; Add to Cart
                 </button>
               </div>

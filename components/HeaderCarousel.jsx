@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/Image";
 import { Carousel } from "antd";
 import styles from "../styles/Home.module.css";
+import Button from "../common/Button";
 
 const backgroundStyle = {
   // height: "700px",
@@ -40,9 +41,7 @@ export default function HeaderCarousel() {
           Go beyond filtration with a unique multi-stage filtration and
           purification system for crisp drinking water.
         </p>
-        <button className={`${styles.btn} ${styles.btnPrimary}`}>
-          Learn More
-        </button>
+        <Button value="Learn More" />
       </div>
       <div style={imageStyle}>
         <Image

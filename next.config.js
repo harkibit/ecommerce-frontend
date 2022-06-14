@@ -5,6 +5,9 @@ const nextConfig = {
   images: {
     domains: ["localhost"],
   },
+  env: {
+    BASE_URL: "http://localhost:1337/api",
+  },
 };
 
 module.exports = nextConfig;

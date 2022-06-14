@@ -1,4 +1,5 @@
 import Image from "next/Image";
+import Link from "next/Link";
 import styles from "../styles/Home.module.css";
 
 import React, { useState } from "react";
@@ -19,9 +20,11 @@ export default function Navbar() {
   };
   return (
     <nav className={styles.menuBar}>
-      <div className={styles.logo}>
-        <Image src="/logo.svg" width={60} height={60} alt="logo" />
-      </div>
+      <Link href="/">
+        <div className={styles.logo}>
+          <Image src="/logo.svg" width={60} height={60} alt="logo" />
+        </div>
+      </Link>
       <div className={styles.menuCon}>
         <div className={styles.rightMenu}>
           <RightMenu />

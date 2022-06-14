@@ -9,6 +9,8 @@ body {
 :root {
   --primary: #003366;
   --secondary: #6495ed;
+  --red: rgb(202, 13, 13);
+  --gray: rgb(101, 101, 101);
   --lightGray: #eee;
   --borderRadius: 10px;
 }
@@ -33,6 +35,9 @@ img {
   max-width: 100%;
 }
 
+.greyText {
+  color: var(--gray);
+}
 /* button style start */
 .iconBtn {
   border: none;
